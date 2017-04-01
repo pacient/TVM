@@ -7,33 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		381B1AE91E8FB4C700397B3C /* ShowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381B1AE81E8FB4C700397B3C /* ShowCell.swift */; };
-		381B1AEC1E8FB5C000397B3C /* MainTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381B1AEB1E8FB5C000397B3C /* MainTabViewController.swift */; };
-		381B1AEF1E8FB78900397B3C /* Show.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381B1AEE1E8FB78900397B3C /* Show.swift */; };
-		381B1AF31E8FC79D00397B3C /* ImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381B1AF21E8FC79D00397B3C /* ImageViewExtension.swift */; };
 		3872E2961E8FA9E4000D44AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3872E2951E8FA9E4000D44AF /* AppDelegate.swift */; };
+		3872E2981E8FA9E4000D44AF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3872E2971E8FA9E4000D44AF /* ViewController.swift */; };
 		3872E29B1E8FA9E4000D44AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3872E2991E8FA9E4000D44AF /* Main.storyboard */; };
 		3872E29D1E8FA9E4000D44AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3872E29C1E8FA9E4000D44AF /* Assets.xcassets */; };
 		3872E2A01E8FA9E4000D44AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3872E29E1E8FA9E4000D44AF /* LaunchScreen.storyboard */; };
-		38A416551E8FF9C100F795A4 /* ShowDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A416541E8FF9C100F795A4 /* ShowDetailsViewController.swift */; };
-		8373C5D210AB03002F8374FE /* Pods_TVM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7FAD8F780A4AF32BA25204A /* Pods_TVM.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		381B1AE81E8FB4C700397B3C /* ShowCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowCell.swift; sourceTree = "<group>"; };
-		381B1AEB1E8FB5C000397B3C /* MainTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabViewController.swift; sourceTree = "<group>"; };
-		381B1AEE1E8FB78900397B3C /* Show.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Show.swift; sourceTree = "<group>"; };
-		381B1AF21E8FC79D00397B3C /* ImageViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewExtension.swift; sourceTree = "<group>"; };
 		3872E2921E8FA9E4000D44AF /* TVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TVM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3872E2951E8FA9E4000D44AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3872E2971E8FA9E4000D44AF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3872E29A1E8FA9E4000D44AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3872E29C1E8FA9E4000D44AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3872E29F1E8FA9E4000D44AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3872E2A11E8FA9E4000D44AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		38A416541E8FF9C100F795A4 /* ShowDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowDetailsViewController.swift; sourceTree = "<group>"; };
-		505B7F3F94D9F4D146E1263D /* Pods-TVM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TVM.release.xcconfig"; path = "Pods/Target Support Files/Pods-TVM/Pods-TVM.release.xcconfig"; sourceTree = "<group>"; };
-		ACD4DAED4FD9F336C2A45B7B /* Pods-TVM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TVM.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TVM/Pods-TVM.debug.xcconfig"; sourceTree = "<group>"; };
-		E7FAD8F780A4AF32BA25204A /* Pods_TVM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TVM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,53 +29,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8373C5D210AB03002F8374FE /* Pods_TVM.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		381B1AE71E8FB4A500397B3C /* Custom Cells */ = {
-			isa = PBXGroup;
-			children = (
-				381B1AE81E8FB4C700397B3C /* ShowCell.swift */,
-			);
-			name = "Custom Cells";
-			sourceTree = "<group>";
-		};
-		381B1AEA1E8FB5A500397B3C /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				381B1AEB1E8FB5C000397B3C /* MainTabViewController.swift */,
-				38A416541E8FF9C100F795A4 /* ShowDetailsViewController.swift */,
-			);
-			name = Controllers;
-			sourceTree = "<group>";
-		};
-		381B1AED1E8FB77900397B3C /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				381B1AEE1E8FB78900397B3C /* Show.swift */,
-			);
-			name = Model;
-			sourceTree = "<group>";
-		};
-		381B1AF01E8FC78700397B3C /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				381B1AF21E8FC79D00397B3C /* ImageViewExtension.swift */,
-			);
-			name = Extensions;
-			sourceTree = "<group>";
-		};
 		3872E2891E8FA9E4000D44AF = {
 			isa = PBXGroup;
 			children = (
 				3872E2941E8FA9E4000D44AF /* TVM */,
 				3872E2931E8FA9E4000D44AF /* Products */,
-				E08096F2067B727E5A747140 /* Pods */,
-				B4F4AE878C2FC610F86792FE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -102,34 +54,14 @@
 		3872E2941E8FA9E4000D44AF /* TVM */ = {
 			isa = PBXGroup;
 			children = (
-				381B1AF01E8FC78700397B3C /* Extensions */,
-				381B1AED1E8FB77900397B3C /* Model */,
-				381B1AEA1E8FB5A500397B3C /* Controllers */,
-				381B1AE71E8FB4A500397B3C /* Custom Cells */,
 				3872E2951E8FA9E4000D44AF /* AppDelegate.swift */,
+				3872E2971E8FA9E4000D44AF /* ViewController.swift */,
 				3872E2991E8FA9E4000D44AF /* Main.storyboard */,
 				3872E29C1E8FA9E4000D44AF /* Assets.xcassets */,
 				3872E29E1E8FA9E4000D44AF /* LaunchScreen.storyboard */,
 				3872E2A11E8FA9E4000D44AF /* Info.plist */,
 			);
 			path = TVM;
-			sourceTree = "<group>";
-		};
-		B4F4AE878C2FC610F86792FE /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				E7FAD8F780A4AF32BA25204A /* Pods_TVM.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		E08096F2067B727E5A747140 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				ACD4DAED4FD9F336C2A45B7B /* Pods-TVM.debug.xcconfig */,
-				505B7F3F94D9F4D146E1263D /* Pods-TVM.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,12 +71,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3872E2A41E8FA9E4000D44AF /* Build configuration list for PBXNativeTarget "TVM" */;
 			buildPhases = (
-				CB92FC26606EF7D27B33721F /* [CP] Check Pods Manifest.lock */,
 				3872E28E1E8FA9E4000D44AF /* Sources */,
 				3872E28F1E8FA9E4000D44AF /* Frameworks */,
 				3872E2901E8FA9E4000D44AF /* Resources */,
-				0168F95579D4C10435DE8281 /* [CP] Embed Pods Frameworks */,
-				3B584D3D32FD47DD36F113F6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -167,7 +96,6 @@
 				TargetAttributes = {
 					3872E2911E8FA9E4000D44AF = {
 						CreatedOnToolsVersion = 8.3;
-						DevelopmentTeam = TPWG8G6ELX;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -203,65 +131,13 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		0168F95579D4C10435DE8281 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TVM/Pods-TVM-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		3B584D3D32FD47DD36F113F6 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TVM/Pods-TVM-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		CB92FC26606EF7D27B33721F /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		3872E28E1E8FA9E4000D44AF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				381B1AE91E8FB4C700397B3C /* ShowCell.swift in Sources */,
+				3872E2981E8FA9E4000D44AF /* ViewController.swift in Sources */,
 				3872E2961E8FA9E4000D44AF /* AppDelegate.swift in Sources */,
-				381B1AF31E8FC79D00397B3C /* ImageViewExtension.swift in Sources */,
-				381B1AEF1E8FB78900397B3C /* Show.swift in Sources */,
-				38A416551E8FF9C100F795A4 /* ShowDetailsViewController.swift in Sources */,
-				381B1AEC1E8FB5C000397B3C /* MainTabViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,10 +258,8 @@
 		};
 		3872E2A51E8FA9E4000D44AF /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = ACD4DAED4FD9F336C2A45B7B /* Pods-TVM.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = TPWG8G6ELX;
 				INFOPLIST_FILE = TVM/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nunev.TVM;
@@ -396,10 +270,8 @@
 		};
 		3872E2A61E8FA9E4000D44AF /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 505B7F3F94D9F4D146E1263D /* Pods-TVM.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = TPWG8G6ELX;
 				INFOPLIST_FILE = TVM/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nunev.TVM;
@@ -427,7 +299,6 @@
 				3872E2A61E8FA9E4000D44AF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
