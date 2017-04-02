@@ -283,7 +283,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Test" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="rdM-Gp-M9x">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Test" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="rdM-Gp-M9x">
                                         <rect key="frame" x="8" y="222" width="311" height="24"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -325,6 +325,7 @@
                                     <constraint firstItem="erL-RK-hfF" firstAttribute="top" secondItem="Lck-Jq-Lea" secondAttribute="top" id="b5c-N5-1bm"/>
                                     <constraint firstItem="xxL-V9-a0f" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="erL-RK-hfF" secondAttribute="trailing" id="cJ7-fQ-tMD"/>
                                     <constraint firstItem="zoI-4g-p5T" firstAttribute="leading" secondItem="E9o-Lh-nYh" secondAttribute="leading" id="cgG-Zf-fVk"/>
+                                    <constraint firstItem="N7q-FC-zUp" firstAttribute="top" secondItem="6fy-DJ-dIQ" secondAttribute="bottom" constant="2.5" id="gRO-06-uAd"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="zoI-4g-p5T" secondAttribute="trailing" constant="8" id="jUQ-hU-Sq0"/>
                                     <constraint firstItem="xxL-V9-a0f" firstAttribute="top" secondItem="rnt-5p-XJt" secondAttribute="top" id="jeq-hj-lFD"/>
                                     <constraint firstItem="rdM-Gp-M9x" firstAttribute="leading" secondItem="y8f-Xy-ZCL" secondAttribute="leading" id="m9t-8U-NE6"/>
@@ -363,10 +364,10 @@
                         <outlet property="containerView" destination="rnt-5p-XJt" id="gbw-kF-dOc"/>
                         <outlet property="nextEpDate" destination="zoI-4g-p5T" id="Wx3-Fb-OQG"/>
                         <outlet property="nextEpName" destination="E9o-Lh-nYh" id="I37-Sy-mOB"/>
-                        <outlet property="nextEpSummary" destination="rdM-Gp-M9x" id="HF1-dK-1hq"/>
                         <outlet property="showDays" destination="6fy-DJ-dIQ" id="V1p-dT-Gc1"/>
                         <outlet property="showImageView" destination="Lck-Jq-Lea" id="y4D-n8-T09"/>
                         <outlet property="showName" destination="erL-RK-hfF" id="dDX-rK-3CZ"/>
+                        <outlet property="showSummary" destination="rdM-Gp-M9x" id="h8z-gY-iI1"/>
                         <outlet property="statusView" destination="cCk-xp-bTo" id="N7K-77-rCl"/>
                         <outlet property="summaryHeightConstraint" destination="2XJ-bL-la1" id="kfO-5p-p14"/>
                     </connections>

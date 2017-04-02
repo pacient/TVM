@@ -15,6 +15,7 @@ class Show: NSObject {
     var imageURL: String = ""
     var status: String = ""
     var nextEpURL: String?
+    var summary: String = ""
 
     init?(data json: JSON){
         if let show = json["show"].dictionary, let schedule = show["schedule"]?.dictionaryValue, let image = show["image"]?.dictionaryValue {
@@ -25,6 +26,7 @@ class Show: NSObject {
             if let links = show["_links"]?.dictionary, let next = links["nextepisode"]?.dictionaryValue {
                 self.nextEpURL = next["href"]?.stringValue
             }
+            self.summary = show["summary"]!.stringValue
         }
     }
 }
