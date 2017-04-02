@@ -71,17 +71,8 @@ class MainTabViewController: UIViewController, UITableViewDelegate, UITableViewD
             if let json = response.result.value {
                 let data = JSON(json).arrayValue
                 for each in data {
-                    if let show = each["show"].dictionary, let schedule = show["schedule"]?.dictionaryValue, let image = show["image"]?.dictionaryValue {
-                        let showObject = Show()
-                        showObject.name = show["name"]!.stringValue
-                        showObject.days = schedule["days"]!.arrayObject as! [String]
-                        showObject.imageURL = image["medium"]?.stringValue ?? ""
-                        showObject.status = show["status"]!.stringValue
-                        if let links = show["_links"]?.dictionary, let next = links["nextepisode"]?.dictionaryValue {
-                            showObject.nextEpURL = next["href"]?.stringValue
-                        }
-                        self.shows.append(showObject)
-                    }
+                    let showObject = Show(data: each)
+                    self.shows.append(showObject!)
                 }
                 self.tableView.reloadData()
             }

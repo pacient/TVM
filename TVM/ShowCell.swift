@@ -14,5 +14,6 @@ class ShowCell: UITableViewCell {
     @IBOutlet weak var showName: UILabel!
     @IBOutlet weak var showDays: UILabel!
     @IBOutlet weak var statusView: UIView!
+    @IBOutlet weak var nextEpDate: UILabel!
 
 }
