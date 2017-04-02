@@ -36,7 +36,13 @@ class MainTabViewController: UIViewController, UITableViewDelegate, UITableViewD
         let cell = tableView.dequeueReusableCell(withIdentifier: "showCell") as! ShowCell
         cell.showName.text = shows[indexPath.row].name
         cell.showDays.text = shows[indexPath.row].days.joined(separator: ", ")
-        cell.statusView.backgroundColor = shows[indexPath.row].status == "Running" ? #colorLiteral(red: 0.2745098174, green: 0.4862745106, blue: 0.1411764771, alpha: 1) : #colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 1)
+        cell.nextEpDate.text = shows[indexPath.row].nextEpDate
+        switch shows[indexPath.row].status {
+        case .Finished: cell.statusView.backgroundColor = #colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 1)
+        case .Running:  cell.statusView.backgroundColor = #colorLiteral(red: 0.2745098174, green: 0.4862745106, blue: 0.1411764771, alpha: 1)
+        case .TBD:      cell.statusView.backgroundColor = #colorLiteral(red: 0.7254902124, green: 0.4784313738, blue: 0.09803921729, alpha: 1)
+        case .Unknown:  cell.statusView.backgroundColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
+        }
         cell.showImage.downloadImage(from: shows[indexPath.row].imageURL)
         return cell
     }
@@ -73,6 +79,16 @@ class MainTabViewController: UIViewController, UITableViewDelegate, UITableViewD
                 let data = JSON(json).arrayValue
                 for each in data {
                     let showObject = Show(data: each)
+                    if let nextURL = showObject?.nextEpURL {
+                        Alamofire.request(nextURL).responseJSON(completionHandler: { (res) in
+                            if let json = res.result.value, let data = JSON(json).dictionary {
+                                showObject?.nextEpDate = "\(data["airdate"]!.stringValue) \(data["airtime"]!.stringValue)"
+                                self.tableView.reloadData()
+                            }
+                        })
+                    }else {
+                        showObject?.nextEpDate = "No info available"
+                    }
                     self.shows.append(showObject!)
                 }
                 self.tableView.reloadData()
