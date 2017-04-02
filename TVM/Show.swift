@@ -25,6 +25,7 @@ class Show: NSObject {
     var status: Status = Status(rawValue: "")!
     var nextEpURL: String?
     var nextEpDate: String?
+    var dateForNotification: String?
     var summary: String = ""
     var rating: String = ""
     var genres: [String] = []

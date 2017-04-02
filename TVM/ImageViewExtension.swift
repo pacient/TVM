@@ -18,6 +18,8 @@ extension UIImageView {
             .responseData { response in
                 if let data = response.result.value {
                     self.image = UIImage(data: data)
+                }else {
+                    self.image = #imageLiteral(resourceName: "No_image_available")
                 }
         }
     }

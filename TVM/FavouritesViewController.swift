@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import UserNotifications
 
 class FavouritesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
@@ -19,6 +20,9 @@ class FavouritesViewController: UIViewController, UITableViewDelegate, UITableVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(retrieveFavourites), for: .valueChanged)
+        self.tableview.refreshControl = refreshControl
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -37,9 +41,11 @@ class FavouritesViewController: UIViewController, UITableViewDelegate, UITableVi
                         if let nextURL = showObject?.nextEpURL {
                             Alamofire.request(nextURL).responseJSON(completionHandler: { (res) in
                                 if let json = res.result.value, let data = JSON(json).dictionary {
+                                    showObject?.dateForNotification = data["airdate"]!.string
                                     let arr = data["airdate"]!.string!.components(separatedBy: "-")
                                     let dateStr = "\(arr[2])/\(arr[1])/\(arr[0])"
                                     showObject?.nextEpDate = "\(dateStr) \(data["airtime"]!.stringValue)"
+                                    self.scheduleNotification(for: showObject!)
                                     self.tableview.reloadData()
                                 }
                             })
@@ -51,6 +57,32 @@ class FavouritesViewController: UIViewController, UITableViewDelegate, UITableVi
                     }
                     self.tableview.reloadData()
                 })
+            }
+            self.tableview.refreshControl?.endRefreshing()
+        }
+    }
+    
+    func scheduleNotification(for show: Show) {
+        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [show.name])
+        let content = UNMutableNotificationContent()
+        content.body = "New \(show.name) episode is coming out today!"
+        content.badge = 1
+        
+        let dateFromatter = DateFormatter()
+        dateFromatter.dateFormat = "yyyy-MM-dd"
+        let dateToFire = dateFromatter.date(from: show.dateForNotification!)
+        var dateComponents = Calendar.current.dateComponents([.year,.month,.day], from: dateToFire!)
+        dateComponents.hour = 10
+        dateComponents.minute = 00
+        dateComponents.second = 00
+        
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
+        
+        let request = UNNotificationRequest(identifier: show.name, content: content, trigger: trigger)
+        
+        UNUserNotificationCenter.current().add(request) { (error) in
+            if let error = error {
+                print(error.localizedDescription)
             }
         }
     }
@@ -76,6 +108,13 @@ class FavouritesViewController: UIViewController, UITableViewDelegate, UITableVi
         }
         cell.showImage.downloadImage(from: storedShows[indexPath.row].imageURL)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "showDetails") as! ShowDetailsViewController
+        vc.show = storedShows[indexPath.row]
+        tableview.deselectRow(at: indexPath, animated: true)
+        self.present(vc, animated: false, completion: nil)
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

@@ -22,9 +22,11 @@ class ShowDetailsViewController: UIViewController {
     @IBOutlet weak var showGenres: UILabel!
     @IBOutlet weak var showRuntime: UILabel!
 
+    @IBOutlet weak var favouriteButton: UIButton!
     @IBOutlet weak var containerView: SpringView!
     
     var show: Show!
+    var isFavourite = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,8 +72,34 @@ class ShowDetailsViewController: UIViewController {
             self.nextEpDate.text = ""
             self.nextEpName.text = "No info available"
         }
+        let storedShows = UserDefaults.standard.array(forKey: "storedShows") as? [String] ?? []
+        isFavourite = storedShows.contains(show.showID)
+        
+        if isFavourite {
+            favouriteButton.setTitle("Unsave", for: .normal)
+            favouriteButton.backgroundColor = #colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 1)
+        }
+        
     }
 
+    @IBAction func savedPressed(_ sender: Any) {
+        var storedShows = UserDefaults.standard.array(forKey: "storedShows") as? [String] ?? []
+        if isFavourite{
+            let int = storedShows.index(of: self.show.showID)!
+            storedShows.remove(at: int)
+            
+            favouriteButton.setTitle("Save", for: .normal)
+            favouriteButton.backgroundColor = #colorLiteral(red: 0.2745098174, green: 0.4862745106, blue: 0.1411764771, alpha: 1)
+        }else {
+            storedShows.append(self.show.showID)
+            favouriteButton.setTitle("Unsave", for: .normal)
+            favouriteButton.backgroundColor = #colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 1)
+        }
+        
+        UserDefaults.standard.set(storedShows, forKey: "storedShows")
+        UserDefaults.standard.synchronize()
+    }
+    
     @IBAction func xPressed(_ sender: Any) {
         animateView(with: "zoomOut")
         containerView.animateNext {
