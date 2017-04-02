@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item 2-->
+        <!--View Controller-->
         <scene sceneID="jZL-Hr-gnw">
             <objects>
                 <viewController id="40w-y7-vBa" sceneMemberID="viewController">
@@ -19,17 +19,17 @@
                         <viewControllerLayoutGuide type="bottom" id="Qlg-dw-H9S"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="JM9-sZ-ODH">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="zhj-ez-ZMz"/>
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="zhj-ez-ZMz"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xFp-AF-JZw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="690" y="303"/>
         </scene>
-        <!--Item 1-->
+        <!--Main Tab View Controller-->
         <scene sceneID="IJP-nb-da3">
             <objects>
                 <viewController id="3zU-an-hgD" customClass="MainTabViewController" customModule="TVM" customModuleProvider="target" sceneMemberID="viewController">
@@ -38,7 +38,7 @@
                         <viewControllerLayoutGuide type="bottom" id="ZEF-Fb-4tn"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="jYE-u7-Gtx">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mEn-rX-Wta">
@@ -172,7 +172,7 @@
                             <constraint firstAttribute="trailing" secondItem="iYx-Np-QHe" secondAttribute="trailing" id="k3y-Re-tll"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="kLB-4Z-apR"/>
+                    <tabBarItem key="tabBarItem" systemItem="search" id="kLB-4Z-apR"/>
                     <connections>
                         <outlet property="searchbar" destination="nLP-jw-Brd" id="AYB-6a-RwO"/>
                         <outlet property="tableView" destination="iYx-Np-QHe" id="6qR-Ke-STd"/>
@@ -379,10 +379,13 @@
         <scene sceneID="V3q-JS-juC">
             <objects>
                 <tabBarController id="nm4-Gh-VaF" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="IuV-7g-0GR">
+                    <tabBar key="tabBar" opaque="NO" contentMode="scaleToFill" translucent="NO" id="IuV-7g-0GR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.21471482519999999" green="0.29935172199999999" blue="0.47494345900000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.21471482515335083" green="0.29935172200202942" blue="0.47494345903396606" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
                         <segue destination="3zU-an-hgD" kind="relationship" relationship="viewControllers" id="YHx-W6-s9u"/>

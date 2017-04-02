@@ -44,6 +44,7 @@ class MainTabViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "showDetails") as! ShowDetailsViewController
         vc.show = shows[indexPath.row]
+        tableView.deselectRow(at: indexPath, animated: true)
         self.present(vc, animated: false, completion: nil)
     }
     
