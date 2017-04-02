@@ -13,6 +13,7 @@ enum Status: String {
     case Running    = "running"
     case Finished   = "ended"
     case TBD        = "to be determined"
+    case InDev      = "in development"
     case Unknown    = ""
 }
 
@@ -47,5 +48,25 @@ class Show: NSObject {
             }
             self.genres = show["genres"]?.arrayObject as! [String]
         }
+    }
+    
+    init?(dictionary json: [String : JSON]){
+        if let schedule = json["schedule"]?.dictionaryValue, let image = json["image"]?.dictionaryValue {
+            self.name = json["name"]!.stringValue
+            self.days = schedule["days"]!.arrayObject as! [String]
+            self.imageURL = image["medium"]?.stringValue ?? ""
+            self.status = Status(rawValue: json["status"]!.stringValue.lowercased())!
+            if let links = json["_links"]?.dictionary, let next = links["nextepisode"]?.dictionaryValue {
+                self.nextEpURL = next["href"]?.stringValue
+            }
+            self.summary = json["summary"]!.stringValue
+            self.runtime = json["runtime"]!.stringValue
+            self.showID  = json["id"]!.stringValue
+            if let rating = json["rating"]?.dictionary, let average = rating["average"]?.double{
+                self.rating = String(average)
+            }
+            self.genres = json["genres"]?.arrayObject as! [String]
+        }
+
     }
 }

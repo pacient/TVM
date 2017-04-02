@@ -44,6 +44,7 @@
 		38A4168C1E90DACB00F795A4 /* TransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A416701E90DACB00F795A4 /* TransitionManager.swift */; };
 		38A4168D1E90DACB00F795A4 /* TransitionZoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A416711E90DACB00F795A4 /* TransitionZoom.swift */; };
 		38A4168E1E90DACB00F795A4 /* UnwindSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A416721E90DACB00F795A4 /* UnwindSegue.swift */; };
+		38A416901E91642700F795A4 /* FavouritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A4168F1E91642700F795A4 /* FavouritesViewController.swift */; };
 		8373C5D210AB03002F8374FE /* Pods_TVM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7FAD8F780A4AF32BA25204A /* Pods_TVM.framework */; };
 /* End PBXBuildFile section */
 
@@ -87,6 +88,7 @@
 		38A416701E90DACB00F795A4 /* TransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionManager.swift; sourceTree = "<group>"; };
 		38A416711E90DACB00F795A4 /* TransitionZoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionZoom.swift; sourceTree = "<group>"; };
 		38A416721E90DACB00F795A4 /* UnwindSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnwindSegue.swift; sourceTree = "<group>"; };
+		38A4168F1E91642700F795A4 /* FavouritesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavouritesViewController.swift; sourceTree = "<group>"; };
 		505B7F3F94D9F4D146E1263D /* Pods-TVM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TVM.release.xcconfig"; path = "Pods/Target Support Files/Pods-TVM/Pods-TVM.release.xcconfig"; sourceTree = "<group>"; };
 		ACD4DAED4FD9F336C2A45B7B /* Pods-TVM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TVM.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TVM/Pods-TVM.debug.xcconfig"; sourceTree = "<group>"; };
 		E7FAD8F780A4AF32BA25204A /* Pods_TVM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TVM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -117,6 +119,7 @@
 			children = (
 				381B1AEB1E8FB5C000397B3C /* MainTabViewController.swift */,
 				38A416541E8FF9C100F795A4 /* ShowDetailsViewController.swift */,
+				38A4168F1E91642700F795A4 /* FavouritesViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -349,6 +352,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38A416901E91642700F795A4 /* FavouritesViewController.swift in Sources */,
 				381B1AE91E8FB4C700397B3C /* ShowCell.swift in Sources */,
 				38A4167C1E90DACB00F795A4 /* DesignableTextView.swift in Sources */,
 				38A416831E90DACB00F795A4 /* SoundPlayer.swift in Sources */,

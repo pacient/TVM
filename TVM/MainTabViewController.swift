@@ -41,7 +41,7 @@ class MainTabViewController: UIViewController, UITableViewDelegate, UITableViewD
         case .Finished: cell.statusView.backgroundColor = #colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 1)
         case .Running:  cell.statusView.backgroundColor = #colorLiteral(red: 0.2745098174, green: 0.4862745106, blue: 0.1411764771, alpha: 1)
         case .TBD:      cell.statusView.backgroundColor = #colorLiteral(red: 0.7254902124, green: 0.4784313738, blue: 0.09803921729, alpha: 1)
-        case .Unknown:  cell.statusView.backgroundColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
+        case .Unknown,.InDev:  cell.statusView.backgroundColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
         }
         cell.showImage.downloadImage(from: shows[indexPath.row].imageURL)
         return cell
@@ -63,9 +63,26 @@ class MainTabViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
 
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        let action = UITableViewRowAction(style: .normal, title: "Save") { (action, indexPath) in
-            print("save this")
+        var storedShows = UserDefaults.standard.array(forKey: "storedShows") as? [String] ?? []
+        let isFavourite = storedShows.contains(self.shows[indexPath.row].showID)
+        var action: UITableViewRowAction
+        if isFavourite {
+            action = UITableViewRowAction(style: .destructive, title: "Unsave", handler: { (action, indexPath) in
+                let int = storedShows.index(of: self.shows[indexPath.row].showID)!
+                storedShows.remove(at: int)
+                UserDefaults.standard.set(storedShows, forKey: "storedShows")
+                UserDefaults.standard.synchronize()
+                self.tableView.setEditing(false, animated: true)
+            })
+        }else{
+            action = UITableViewRowAction(style: .normal, title: "Save") { (action, indexPath) in
+                storedShows.append(self.shows[indexPath.row].showID)
+                UserDefaults.standard.set(storedShows, forKey: "storedShows")
+                UserDefaults.standard.synchronize()
+                self.tableView.setEditing(false, animated: true)
+            }
         }
+        tableView.endEditing(true)
         return [action]
     }
     
