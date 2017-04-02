@@ -21,11 +21,18 @@ class ShowDetailsViewController: UIViewController {
     @IBOutlet weak var nextEpSummary: UITextView!
     @IBOutlet weak var summaryHeightConstraint: NSLayoutConstraint!
     
-    var show = Show()
+    @IBOutlet weak var containerView: SpringView!
+    
+    var show: Show!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         populateView()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        animateView(with: "zoomIn")
+        containerView.animate()
     }
     
     override func viewDidLayoutSubviews() {
@@ -34,6 +41,12 @@ class ShowDetailsViewController: UIViewController {
             self.summaryHeightConstraint.constant = size.height
             self.view.layoutIfNeeded()
         }
+    }
+    
+    func animateView(with animation: String) {
+        containerView.animation = animation
+        containerView.curve = "easeIn"
+        containerView.duration = 0.7
     }
     
     func populateView() {
@@ -58,6 +71,9 @@ class ShowDetailsViewController: UIViewController {
     }
 
     @IBAction func xPressed(_ sender: Any) {
-        self.dismiss(animated: false, completion: nil)
+        animateView(with: "zoomOut")
+        containerView.animateNext {
+            self.dismiss(animated: false, completion: nil)
+        }
     }
 }
