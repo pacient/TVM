@@ -61,7 +61,9 @@ class ShowDetailsViewController: UIViewController {
             Alamofire.request(url).responseData(completionHandler: { (response) in
                 if let json = response.result.value, let data = JSON(json).dictionary {
                     self.nextEpName.text = data["name"]!.stringValue
-                    self.nextEpDate.text = "\(data["airdate"]!.stringValue) \(data["airtime"]!.stringValue)"
+                    let arr = data["airdate"]!.string!.components(separatedBy: "-")
+                    let dateStr = "\(arr[2])/\(arr[1])/\(arr[0])"
+                    self.nextEpDate.text = "\(dateStr) \(data["airtime"]!.stringValue)"
                 }
             })
         }else {

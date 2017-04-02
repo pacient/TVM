@@ -82,7 +82,9 @@ class MainTabViewController: UIViewController, UITableViewDelegate, UITableViewD
                     if let nextURL = showObject?.nextEpURL {
                         Alamofire.request(nextURL).responseJSON(completionHandler: { (res) in
                             if let json = res.result.value, let data = JSON(json).dictionary {
-                                showObject?.nextEpDate = "\(data["airdate"]!.stringValue) \(data["airtime"]!.stringValue)"
+                                let arr = data["airdate"]!.string!.components(separatedBy: "-")
+                                let dateStr = "\(arr[2])/\(arr[1])/\(arr[0])"
+                                showObject?.nextEpDate = "\(dateStr) \(data["airtime"]!.stringValue)"
                                 self.tableView.reloadData()
                             }
                         })
