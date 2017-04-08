@@ -11,15 +11,17 @@ import Alamofire
 import SwiftyJSON
 import UserNotifications
 
-class FavouritesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
+class FavouritesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate{
     
     @IBOutlet weak var searchbar: UISearchBar!
     @IBOutlet weak var tableview: UITableView!
     
     var storedShows = [Show]()
+    var shows        = [Show]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchbar.delegate = self
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(retrieveFavourites), for: .valueChanged)
         self.tableview.refreshControl = refreshControl
@@ -54,6 +56,7 @@ class FavouritesViewController: UIViewController, UITableViewDelegate, UITableVi
                         }
                         self.storedShows.append(showObject!)
                         self.storedShows.sort {$0.name < $1.name}
+                        self.shows = self.storedShows
                     }
                     self.tableview.reloadData()
                 })
@@ -92,27 +95,28 @@ class FavouritesViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return storedShows.count
+        return shows.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "showCell") as! ShowCell
-        cell.showName.text = storedShows[indexPath.row].name
-        cell.showDays.text = storedShows[indexPath.row].days.joined(separator: ", ")
-        cell.nextEpDate.text = storedShows[indexPath.row].nextEpDate
-        switch storedShows[indexPath.row].status {
+        cell.showName.text = shows[indexPath.row].name
+        cell.showDays.text = shows[indexPath.row].days.joined(separator: ", ")
+        cell.nextEpDate.text = shows[indexPath.row].nextEpDate
+        switch shows[indexPath.row].status {
         case .Finished: cell.statusView.backgroundColor = #colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 1)
         case .Running:  cell.statusView.backgroundColor = #colorLiteral(red: 0.2745098174, green: 0.4862745106, blue: 0.1411764771, alpha: 1)
         case .TBD:      cell.statusView.backgroundColor = #colorLiteral(red: 0.7254902124, green: 0.4784313738, blue: 0.09803921729, alpha: 1)
         case .Unknown,.InDev:  cell.statusView.backgroundColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
         }
-        cell.showImage.downloadImage(from: storedShows[indexPath.row].imageURL)
+        cell.showImage.downloadImage(from: shows[indexPath.row].imageURL)
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "showDetails") as! ShowDetailsViewController
-        vc.show = storedShows[indexPath.row]
+        vc.show = shows[indexPath.row]
+        searchbar.endEditing(true)
         tableview.deselectRow(at: indexPath, animated: true)
         self.present(vc, animated: false, completion: nil)
     }
@@ -123,5 +127,18 @@ class FavouritesViewController: UIViewController, UITableViewDelegate, UITableVi
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 200
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        let query = searchText.lowercased()
+        let queryShows = storedShows.filter { (show) -> Bool in
+            return show.name.lowercased().contains(query)
+        }
+        shows = query != "" ? queryShows : storedShows
+        self.tableview.reloadData()
+    }
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        self.searchbar.endEditing(true)
     }
 }
