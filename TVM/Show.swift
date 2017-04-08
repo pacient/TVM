@@ -31,6 +31,7 @@ class Show: NSObject {
     var genres: [String] = []
     var showID: String = ""
     var runtime: String = ""
+    var link: String = ""
 
     init?(data json: JSON){
         if let show = json["show"].dictionary, let schedule = show["schedule"]?.dictionaryValue, let image = show["image"]?.dictionaryValue {
@@ -47,6 +48,7 @@ class Show: NSObject {
             if let rating = show["rating"]?.dictionary, let average = rating["average"]?.double{
                 self.rating = String(average)
             }
+            self.link = show["url"]!.stringValue
             self.genres = show["genres"]?.arrayObject as! [String]
         }
     }

@@ -100,6 +100,13 @@ class ShowDetailsViewController: UIViewController {
         UserDefaults.standard.set(storedShows, forKey: "storedShows")
         UserDefaults.standard.synchronize()
     }
+    @IBAction func viewMorePressed(_ sender: Any) {
+        if show.link != "" {
+            if UIApplication.shared.canOpenURL(URL(string: show.link)!){
+                UIApplication.shared.open(URL(string: show.link)!, options: [:], completionHandler: nil)
+            }
+        }
+    }
     
     @IBAction func xPressed(_ sender: Any) {
         animateView(with: "zoomOut")
