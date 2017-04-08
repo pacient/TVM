@@ -359,7 +359,7 @@
                                 <blurEffect style="light"/>
                             </visualEffectView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rnt-5p-XJt" customClass="SpringView" customModule="TVM" customModuleProvider="target">
-                                <rect key="frame" x="32" y="40" width="311" height="587"/>
+                                <rect key="frame" x="20" y="25" width="335" height="632"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Lck-Jq-Lea">
                                         <rect key="frame" x="8" y="8" width="105" height="130"/>
@@ -369,7 +369,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Game of Thrones" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="erL-RK-hfF">
-                                        <rect key="frame" x="119" y="8" width="147" height="21"/>
+                                        <rect key="frame" x="119" y="8" width="171" height="21"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -387,7 +387,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Friday,Sunday,Monday,Tuesday" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6fy-DJ-dIQ">
-                                        <rect key="frame" x="171" y="65" width="128" height="38.5"/>
+                                        <rect key="frame" x="171" y="65" width="155" height="38.5"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="hWi-G9-zAW"/>
                                         </constraints>
@@ -431,7 +431,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xxL-V9-a0f">
-                                        <rect key="frame" x="266" y="0.0" width="45" height="45"/>
+                                        <rect key="frame" x="290" y="0.0" width="45" height="45"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="45" id="Mis-T5-US5"/>
                                             <constraint firstAttribute="height" constant="45" id="RPl-Sj-7be"/>
@@ -460,7 +460,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="Comedy, Drama, Crime, Thriller, Adventure, Action" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vbu-kr-CFm">
-                                        <rect key="frame" x="77" y="230" width="226" height="37.5"/>
+                                        <rect key="frame" x="77" y="230" width="250" height="37.5"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="jLR-W0-U08"/>
                                         </constraints>
@@ -481,7 +481,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YVb-ZA-sPN">
-                                        <rect key="frame" x="0.0" y="512" width="155" height="75"/>
+                                        <rect key="frame" x="0.0" y="557" width="167" height="75"/>
                                         <color key="backgroundColor" red="0.27450981740000002" green="0.48627451059999999" blue="0.1411764771" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="75" id="dc3-IO-2oq"/>
@@ -500,7 +500,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Oc-Iu-8vw">
-                                        <rect key="frame" x="156" y="512" width="155" height="75"/>
+                                        <rect key="frame" x="168" y="557" width="167" height="75"/>
                                         <color key="backgroundColor" red="0.023529411760000001" green="0.41176470590000003" blue="0.6705882353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="View More">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -578,14 +578,14 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="rnt-5p-XJt" firstAttribute="leading" secondItem="O3d-U5-mJa" secondAttribute="leadingMargin" constant="16" id="5M2-sU-aze"/>
-                            <constraint firstItem="rnt-5p-XJt" firstAttribute="top" secondItem="xxD-aM-i4A" secondAttribute="bottom" constant="20" id="C7o-VD-8SN"/>
+                            <constraint firstItem="rnt-5p-XJt" firstAttribute="leading" secondItem="O3d-U5-mJa" secondAttribute="leadingMargin" constant="4" id="5M2-sU-aze"/>
+                            <constraint firstItem="rnt-5p-XJt" firstAttribute="top" secondItem="xxD-aM-i4A" secondAttribute="bottom" constant="5" id="C7o-VD-8SN"/>
                             <constraint firstItem="U4c-YU-oM4" firstAttribute="top" secondItem="miE-yZ-tYk" secondAttribute="bottom" id="LFJ-RJ-CKW"/>
                             <constraint firstItem="miE-yZ-tYk" firstAttribute="leading" secondItem="O3d-U5-mJa" secondAttribute="leading" id="LZ1-ek-OHZ"/>
                             <constraint firstItem="miE-yZ-tYk" firstAttribute="top" secondItem="O3d-U5-mJa" secondAttribute="top" id="Mov-d8-Hp6"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="rnt-5p-XJt" secondAttribute="trailing" constant="16" id="U08-Ha-IWv"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="rnt-5p-XJt" secondAttribute="trailing" constant="4" id="U08-Ha-IWv"/>
                             <constraint firstAttribute="trailing" secondItem="miE-yZ-tYk" secondAttribute="trailing" id="VW4-5d-VdW"/>
-                            <constraint firstItem="U4c-YU-oM4" firstAttribute="top" secondItem="rnt-5p-XJt" secondAttribute="bottom" constant="40" id="Wuj-nH-cGd"/>
+                            <constraint firstItem="U4c-YU-oM4" firstAttribute="top" secondItem="rnt-5p-XJt" secondAttribute="bottom" constant="10" id="Wuj-nH-cGd"/>
                         </constraints>
                     </view>
                     <connections>

@@ -17,7 +17,7 @@ class FavouritesViewController: UIViewController, UITableViewDelegate, UITableVi
     @IBOutlet weak var tableview: UITableView!
     
     var storedShows = [Show]()
-    var shows        = [Show]()
+    var shows       = [Show]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
