@@ -46,7 +46,6 @@ class CollectionViewController: UIViewController, UICollectionViewDelegate, UICo
         
         // TODO: this works currently but may not work for all
         let transformOffsetY = collectionView.bounds.height * 2/3 // Point at which transform should be complete
-        
         let percent = (0...1).clamp((coverFrame.minY - transformOffsetY) / (collectionView.bounds.height-transformOffsetY))
         
         let maxScaleDifference: CGFloat = 0.2
@@ -66,6 +65,12 @@ class CollectionViewController: UIViewController, UICollectionViewDelegate, UICo
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return shows.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "showDetails") as! ShowDetailsViewController
+        vc.show = shows[indexPath.row]
+        self.present(vc, animated: false, completion: nil)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

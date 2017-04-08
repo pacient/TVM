@@ -84,6 +84,7 @@ class ShowDetailsViewController: UIViewController {
 
     @IBAction func savedPressed(_ sender: Any) {
         var storedShows = UserDefaults.standard.array(forKey: "storedShows") as? [String] ?? []
+        isFavourite = storedShows.contains(show.showID)
         if isFavourite{
             let int = storedShows.index(of: self.show.showID)!
             storedShows.remove(at: int)
