@@ -115,4 +115,7 @@ class MainTabViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
     }
     
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        self.searchbar.endEditing(true)
+    }
 }
