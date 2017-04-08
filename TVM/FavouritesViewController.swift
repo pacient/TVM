@@ -34,8 +34,8 @@ class FavouritesViewController: UIViewController, UITableViewDelegate, UITableVi
     func retrieveFavourites() {
         let shows = UserDefaults.standard.array(forKey: "storedShows") as? [String] ?? []
         if shows.count > 0 {
+            storedShows.removeAll()
             for each in shows {
-                storedShows.removeAll()
                 Alamofire.request("http://api.tvmaze.com/shows/\(each)").responseJSON(completionHandler: { (response) in
                     if let json = response.result.value {
                         let data = JSON(json).dictionary
@@ -58,7 +58,7 @@ class FavouritesViewController: UIViewController, UITableViewDelegate, UITableVi
                         self.storedShows.sort {$0.name < $1.name}
                         self.shows = self.storedShows
                     }
-                    self.tableview.reloadData()
+                    self.tableview.setContentOffset(CGPoint.zero, animated: true)
                 })
             }
             self.tableview.refreshControl?.endRefreshing()

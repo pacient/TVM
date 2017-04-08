@@ -110,6 +110,7 @@ class MainTabViewController: UIViewController, UITableViewDelegate, UITableViewD
                     }
                     self.shows.append(showObject!)
                 }
+                self.tableView.setContentOffset(CGPoint.zero, animated: true)
                 self.tableView.reloadData()
             }
         }
