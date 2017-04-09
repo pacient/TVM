@@ -77,6 +77,8 @@ class CollectionViewController: UIViewController, UICollectionViewDelegate, UICo
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionShow", for: indexPath) as! ShowCollectionCell
         cell.showImage.downloadImage(from: shows[indexPath.item].imageURL)
         transform(cell: cell)
+        cell.layer.masksToBounds = true
+        cell.layer.cornerRadius = 5
         return cell
     }
     
